@@ -9,3 +9,6 @@ frontend/android/build/
 frontend/android/app/build/
 .vscode/
 .idea/
+
+*.tmp
+
