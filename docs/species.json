@@ -1,0 +1,304 @@
+{
+  "count": 19,
+  "species": [
+    {
+      "species_id": "aloe vera",
+      "folder_name": "aloe vera",
+      "common_name": "Aloe Vera",
+      "scientific_name": "Aloe barbadensis miller",
+      "category": "Plant",
+      "campus_location": "UCEV Science & Humanities Block, Medicinal Herbal Bed",
+      "description": "Succulent medicinal plant curated by the Science and Humanities department for environmental and botanical study.",
+      "image_count": 3,
+      "images": [
+        "dataset/aloe%20vera/WhatsApp%20Image%202026-10-24%20at%2011.24.50%20AM%20%281%29.jpeg",
+        "dataset/aloe%20vera/WhatsApp%20Image%202026-10-24%20at%2011.25.01%20AM.jpeg",
+        "dataset/aloe%20vera/WhatsApp%20Image%202026-10-24%20at%2011.25.03%20AM%20%281%29.jpeg"
+      ],
+      "thumbnail": "dataset/aloe%20vera/WhatsApp%20Image%202026-10-24%20at%2011.24.50%20AM%20%281%29.jpeg"
+    },
+    {
+      "species_id": "alstonia scholaris",
+      "folder_name": "alstonia scholaris",
+      "common_name": "Scholar Tree / Devil's Tree",
+      "scientific_name": "Alstonia scholaris",
+      "category": "Tree",
+      "campus_location": "UCEV Central Avenue, Near Central Library",
+      "description": "Stately evergreen canopy tree with whorled leaves and fragrant seasonal blossoms along the UCEV Central Library avenue.",
+      "image_count": 2,
+      "images": [
+        "dataset/alstonia%20scholaris/WhatsApp%20Image%202026-10-24%20at%2011.26.09%20AM%20%281%29.jpeg",
+        "dataset/alstonia%20scholaris/WhatsApp%20Image%202026-10-24%20at%2011.26.09%20AM.jpeg"
+      ],
+      "thumbnail": "dataset/alstonia%20scholaris/WhatsApp%20Image%202026-10-24%20at%2011.26.09%20AM%20%281%29.jpeg"
+    },
+    {
+      "species_id": "areca palm",
+      "folder_name": "areca palm",
+      "common_name": "Areca Palm / Butterfly Palm",
+      "scientific_name": "Dypsis lutescens",
+      "category": "Plant",
+      "campus_location": "UCEV Administrative Block Quadrangle & Dean's Office Entrance",
+      "description": "Clustered ornamental palm featured in the formal administrative courtyard of UCEV Villupuram.",
+      "image_count": 5,
+      "images": [
+        "dataset/areca%20palm/WhatsApp%20Image%202026-10-24%20at%2011.26.11%20AM%20%281%29.jpeg",
+        "dataset/areca%20palm/WhatsApp%20Image%202026-10-24%20at%2011.26.11%20AM.jpeg",
+        "dataset/areca%20palm/WhatsApp%20Image%202026-10-24%20at%2011.26.12%20AM%20%281%29.jpeg",
+        "dataset/areca%20palm/WhatsApp%20Image%202026-10-24%20at%2011.26.12%20AM.jpeg",
+        "dataset/areca%20palm/WhatsApp%20Image%202026-10-24%20at%2011.26.13%20AM.jpeg"
+      ],
+      "thumbnail": "dataset/areca%20palm/WhatsApp%20Image%202026-10-24%20at%2011.26.11%20AM%20%281%29.jpeg"
+    },
+    {
+      "species_id": "banana tree",
+      "folder_name": "banana tree",
+      "common_name": "Banana Plant",
+      "scientific_name": "Musa acuminata",
+      "category": "Plant",
+      "campus_location": "UCEV Hostel Backyard & Agricultural Demonstration Plot",
+      "description": "Giant herbaceous specimen cultivated near the hostel grounds demonstrating local agro-botanical flora.",
+      "image_count": 3,
+      "images": [
+        "dataset/banana%20tree/WhatsApp%20Image%202026-10-24%20at%2011.24.55%20AM.jpeg",
+        "dataset/banana%20tree/WhatsApp%20Image%202026-10-24%20at%2011.26.15%20AM%20%281%29.jpeg",
+        "dataset/banana%20tree/WhatsApp%20Image%202026-10-24%20at%2011.26.15%20AM%20%282%29.jpeg"
+      ],
+      "thumbnail": "dataset/banana%20tree/WhatsApp%20Image%202026-10-24%20at%2011.24.55%20AM.jpeg"
+    },
+    {
+      "species_id": "celtis australis",
+      "folder_name": "celtis australis",
+      "common_name": "European Nettle Tree / Hackberry",
+      "scientific_name": "Celtis australis",
+      "category": "Tree",
+      "campus_location": "UCEV North Campus Perimeter Road, Boundary Greenery",
+      "description": "Hardy drought-tolerant deciduous shade tree providing natural wind protection along the Kakuppam campus boundary.",
+      "image_count": 2,
+      "images": [
+        "dataset/celtis%20australis/WhatsApp%20Image%202026-10-24%20at%2011.26.16%20AM%20%281%29.jpeg",
+        "dataset/celtis%20australis/WhatsApp%20Image%202026-10-24%20at%2011.26.16%20AM.jpeg"
+      ],
+      "thumbnail": "dataset/celtis%20australis/WhatsApp%20Image%202026-10-24%20at%2011.26.16%20AM%20%281%29.jpeg"
+    },
+    {
+      "species_id": "china doll plant",
+      "folder_name": "china doll plant",
+      "common_name": "China Doll Plant",
+      "scientific_name": "Radermachera sinica",
+      "category": "Plant",
+      "campus_location": "UCEV Dean's Office Courtyard & Academic Porch",
+      "description": "Broadleaf ornamental evergreen displaying glossy foliage in sheltered campus verandas.",
+      "image_count": 1,
+      "images": [
+        "dataset/china%20doll%20plant/WhatsApp%20Image%202026-10-24%20at%2011.26.24%20AM.jpeg"
+      ],
+      "thumbnail": "dataset/china%20doll%20plant/WhatsApp%20Image%202026-10-24%20at%2011.26.24%20AM.jpeg"
+    },
+    {
+      "species_id": "coconut tree",
+      "folder_name": "coconut tree",
+      "common_name": "Coconut Palm",
+      "scientific_name": "Cocos nucifera",
+      "category": "Tree",
+      "campus_location": "UCEV Sports Ground Perimeter & Canteen Walkway",
+      "description": "Iconic tropical palms bordering the University College sports ground and athletic pavilions.",
+      "image_count": 4,
+      "images": [
+        "dataset/coconut%20tree/WhatsApp%20Image%202026-10-24%20at%2011.26.20%20AM%20%281%29.jpeg",
+        "dataset/coconut%20tree/WhatsApp%20Image%202026-10-24%20at%2011.26.20%20AM.jpeg",
+        "dataset/coconut%20tree/WhatsApp%20Image%202026-10-24%20at%2011.26.22%20AM%20%281%29.jpeg",
+        "dataset/coconut%20tree/WhatsApp%20Image%202026-10-24%20at%2011.26.22%20AM.jpeg"
+      ],
+      "thumbnail": "dataset/coconut%20tree/WhatsApp%20Image%202026-10-24%20at%2011.26.20%20AM%20%281%29.jpeg"
+    },
+    {
+      "species_id": "foxtail palm",
+      "folder_name": "foxtail palm",
+      "common_name": "Foxtail Palm",
+      "scientific_name": "Wodyetia bifurcata",
+      "category": "Tree",
+      "campus_location": "UCEV Main Entrance Gate Boulevard (Kakuppam Approach)",
+      "description": "Graceful plume-fronded palm adorning the grand entrance driveway welcoming visitors to UCEV.",
+      "image_count": 6,
+      "images": [
+        "dataset/foxtail%20palm/WhatsApp%20Image%202026-10-24%20at%2011.24.51%20AM.jpeg",
+        "dataset/foxtail%20palm/WhatsApp%20Image%202026-10-24%20at%2011.24.53%20AM%20%282%29.jpeg",
+        "dataset/foxtail%20palm/WhatsApp%20Image%202026-10-24%20at%2011.24.54%20AM%20%282%29.jpeg",
+        "dataset/foxtail%20palm/WhatsApp%20Image%202026-10-24%20at%2011.24.58%20AM.jpeg",
+        "dataset/foxtail%20palm/WhatsApp%20Image%202026-10-24%20at%2011.26.11%20AM%20%282%29.jpeg",
+        "dataset/foxtail%20palm/WhatsApp%20Image%202026-10-24%20at%2011.26.24%20AM%20%281%29.jpeg"
+      ],
+      "thumbnail": "dataset/foxtail%20palm/WhatsApp%20Image%202026-10-24%20at%2011.24.51%20AM.jpeg"
+    },
+    {
+      "species_id": "hibiscus",
+      "folder_name": "hibiscus",
+      "common_name": "China Rose / Sembaruthi",
+      "scientific_name": "Hibiscus rosa-sinensis",
+      "category": "Plant",
+      "campus_location": "UCEV Girls Hostel Courtyard & Chemistry/Biology Garden",
+      "description": "Vibrant red flowering shrub studied for botanical morphology and hair care herbal applications.",
+      "image_count": 2,
+      "images": [
+        "dataset/hibiscus/WhatsApp%20Image%202026-10-24%20at%2011.26.13%20AM%20%281%29.jpeg",
+        "dataset/hibiscus/WhatsApp%20Image%202026-10-24%20at%2011.26.13%20AM%20%282%29.jpeg"
+      ],
+      "thumbnail": "dataset/hibiscus/WhatsApp%20Image%202026-10-24%20at%2011.26.13%20AM%20%281%29.jpeg"
+    },
+    {
+      "species_id": "indian almond tree",
+      "folder_name": "indian almond tree",
+      "common_name": "Indian Almond / Nattu Vadumai",
+      "scientific_name": "Terminalia catappa",
+      "category": "Tree",
+      "campus_location": "UCEV University Auditorium Walkway & Open-Air Amphitheatre",
+      "description": "Spreading tiered canopy tree providing cool shade for students outside the university auditorium.",
+      "image_count": 2,
+      "images": [
+        "dataset/indian%20almond%20tree/WhatsApp%20Image%202026-10-24%20at%2011.26.14%20AM%20%281%29.jpeg",
+        "dataset/indian%20almond%20tree/WhatsApp%20Image%202026-10-24%20at%2011.26.14%20AM.jpeg"
+      ],
+      "thumbnail": "dataset/indian%20almond%20tree/WhatsApp%20Image%202026-10-24%20at%2011.26.14%20AM%20%281%29.jpeg"
+    },
+    {
+      "species_id": "indian mast tree",
+      "folder_name": "indian mast tree",
+      "common_name": "False Ashoka / Nettilingam",
+      "scientific_name": "Polyalthia longifolia",
+      "category": "Tree",
+      "campus_location": "UCEV Main Entrance Driveway & Campus Boundary Wall",
+      "description": "Symmetrical columnar evergreen tree functioning as an effective noise and dust barrier along the college boundary.",
+      "image_count": 2,
+      "images": [
+        "dataset/indian%20mast%20tree/WhatsApp%20Image%202026-10-24%20at%2011.26.08%20AM%20%281%29.jpeg",
+        "dataset/indian%20mast%20tree/WhatsApp%20Image%202026-10-24%20at%2011.26.08%20AM.jpeg"
+      ],
+      "thumbnail": "dataset/indian%20mast%20tree/WhatsApp%20Image%202026-10-24%20at%2011.26.08%20AM%20%281%29.jpeg"
+    },
+    {
+      "species_id": "lxora plant",
+      "folder_name": "lxora plant",
+      "common_name": "Jungle Geranium / Ixora (Idli Poo)",
+      "scientific_name": "Ixora coccinea",
+      "category": "Plant",
+      "campus_location": "UCEV Central Campus Circle Lawn & Flagpost Borders",
+      "description": "Dense clusters of vivid scarlet flowers framing the central roundabout and ceremonial flagpole.",
+      "image_count": 6,
+      "images": [
+        "dataset/lxora%20plant/WhatsApp%20Image%202026-10-24%20at%2011.25.00%20AM.jpeg",
+        "dataset/lxora%20plant/WhatsApp%20Image%202026-10-24%20at%2011.25.01%20AM%20%281%29.jpeg",
+        "dataset/lxora%20plant/WhatsApp%20Image%202026-10-24%20at%2011.26.14%20AM%20%282%29.jpeg",
+        "dataset/lxora%20plant/WhatsApp%20Image%202026-10-24%20at%2011.26.15%20AM.jpeg",
+        "dataset/lxora%20plant/WhatsApp%20Image%202026-10-24%20at%2011.26.26%20AM%20%282%29.jpeg",
+        "dataset/lxora%20plant/WhatsApp%20Image%202026-10-24%20at%2011.26.27%20AM.jpeg"
+      ],
+      "thumbnail": "dataset/lxora%20plant/WhatsApp%20Image%202026-10-24%20at%2011.25.00%20AM.jpeg"
+    },
+    {
+      "species_id": "madagascar periwinkle",
+      "folder_name": "madagascar periwinkle",
+      "common_name": "Sadabahar / Nithyakalyani",
+      "scientific_name": "Catharanthus roseus",
+      "category": "Plant",
+      "campus_location": "UCEV Herbal Garden, Science & Humanities Plot",
+      "description": "Essential medicinal perennial herb renowned in oncology research as the source of vincristine alkaloids.",
+      "image_count": 1,
+      "images": [
+        "dataset/madagascar%20periwinkle/WhatsApp%20Image%202026-10-24%20at%2011.24.59%20AM.jpeg"
+      ],
+      "thumbnail": "dataset/madagascar%20periwinkle/WhatsApp%20Image%202026-10-24%20at%2011.24.59%20AM.jpeg"
+    },
+    {
+      "species_id": "mango tree(mangifera indica)",
+      "folder_name": "mango tree(mangifera indica)",
+      "common_name": "Mango Tree / Maamaram",
+      "scientific_name": "Mangifera indica",
+      "category": "Tree",
+      "campus_location": "UCEV Canteen Lawn & Old Campus Orchard",
+      "description": "Heritage canopy shade tree loved by generations of engineering students for shade and seasonal blossoms.",
+      "image_count": 2,
+      "images": [
+        "dataset/mango%20tree%28mangifera%20indica%29/WhatsApp%20Image%202026-10-24%20at%2011.26.24%20AM%20%282%29.jpeg",
+        "dataset/mango%20tree%28mangifera%20indica%29/WhatsApp%20Image%202026-10-24%20at%2011.26.25%20AM.jpeg"
+      ],
+      "thumbnail": "dataset/mango%20tree%28mangifera%20indica%29/WhatsApp%20Image%202026-10-24%20at%2011.26.24%20AM%20%282%29.jpeg"
+    },
+    {
+      "species_id": "manila tamarind",
+      "folder_name": "manila tamarind",
+      "common_name": "Manila Tamarind / Kodukkapuli",
+      "scientific_name": "Pithecellobium dulce",
+      "category": "Tree",
+      "campus_location": "UCEV East Campus Perimeter Fence Line",
+      "description": "Resilient thorny legume tree with sweet spiral pods growing along the campus fence.",
+      "image_count": 2,
+      "images": [
+        "dataset/manila%20tamarind/WhatsApp%20Image%202026-10-24%20at%2011.26.18%20AM%20%281%29.jpeg",
+        "dataset/manila%20tamarind/WhatsApp%20Image%202026-10-24%20at%2011.26.18%20AM%20%282%29.jpeg"
+      ],
+      "thumbnail": "dataset/manila%20tamarind/WhatsApp%20Image%202026-10-24%20at%2011.26.18%20AM%20%281%29.jpeg"
+    },
+    {
+      "species_id": "neem",
+      "folder_name": "neem",
+      "common_name": "Neem Tree / Veppamaram",
+      "scientific_name": "Azadirachta indica",
+      "category": "Tree",
+      "campus_location": "UCEV Engineering Department Courtyards (CSE / ECE / MECH)",
+      "description": "Venerated medicinal tree providing continuous shade, air purification, and natural pest deterrence across department lawns.",
+      "image_count": 3,
+      "images": [
+        "dataset/neem/WhatsApp%20Image%202026-10-24%20at%2011.25.03%20AM.jpeg",
+        "dataset/neem/WhatsApp%20Image%202026-10-24%20at%2011.26.26%20AM%20%281%29.jpeg",
+        "dataset/neem/WhatsApp%20Image%202026-10-24%20at%2011.26.26%20AM.jpeg"
+      ],
+      "thumbnail": "dataset/neem/WhatsApp%20Image%202026-10-24%20at%2011.25.03%20AM.jpeg"
+    },
+    {
+      "species_id": "pomegranate plant",
+      "folder_name": "pomegranate plant",
+      "common_name": "Pomegranate / Madhulai",
+      "scientific_name": "Punica granatum",
+      "category": "Plant",
+      "campus_location": "UCEV Horticulture Plot & Faculty Quarters Garden",
+      "description": "Flowering fruit shrub with brilliant red blossoms thriving in the campus horticultural nursery.",
+      "image_count": 2,
+      "images": [
+        "dataset/pomegranate%20plant/WhatsApp%20Image%202026-10-24%20at%2011.24.55%20AM%20%281%29.jpeg",
+        "dataset/pomegranate%20plant/WhatsApp%20Image%202026-10-24%20at%2011.24.59%20AM%20%281%29.jpeg"
+      ],
+      "thumbnail": "dataset/pomegranate%20plant/WhatsApp%20Image%202026-10-24%20at%2011.24.55%20AM%20%281%29.jpeg"
+    },
+    {
+      "species_id": "sago palm",
+      "folder_name": "sago palm",
+      "common_name": "Sago Palm / King Sago",
+      "scientific_name": "Cycas revoluta",
+      "category": "Plant",
+      "campus_location": "UCEV Administrative Building Entrance Porch",
+      "description": "Living fossil cycad presenting prehistoric symmetrical foliage at the entrance to university administrative offices.",
+      "image_count": 3,
+      "images": [
+        "dataset/sago%20palm/WhatsApp%20Image%202026-10-24%20at%2011.26.10%20AM%20%281%29.jpeg",
+        "dataset/sago%20palm/WhatsApp%20Image%202026-10-24%20at%2011.26.10%20AM%20%282%29.jpeg",
+        "dataset/sago%20palm/WhatsApp%20Image%202026-10-24%20at%2011.26.10%20AM.jpeg"
+      ],
+      "thumbnail": "dataset/sago%20palm/WhatsApp%20Image%202026-10-24%20at%2011.26.10%20AM%20%281%29.jpeg"
+    },
+    {
+      "species_id": "tulasi",
+      "folder_name": "tulasi",
+      "common_name": "Holy Basil / Krishna Tulasi",
+      "scientific_name": "Ocimum tenuiflorum",
+      "category": "Plant",
+      "campus_location": "UCEV Herbal Sanctuary & Campus Temple Circle",
+      "description": "Sacred aromatic herb celebrated for immune-boosting essential oils and Ayurvedic botanical significance.",
+      "image_count": 1,
+      "images": [
+        "dataset/tulasi/WhatsApp%20Image%202026-10-24%20at%2011.25.01%20AM%20%282%29.jpeg"
+      ],
+      "thumbnail": "dataset/tulasi/WhatsApp%20Image%202026-10-24%20at%2011.25.01%20AM%20%282%29.jpeg"
+    }
+  ]
+}

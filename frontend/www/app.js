@@ -26,6 +26,24 @@ function resolveApiBase() {
 const API_BASE = resolveApiBase();
 console.log('[SmartCampusFlora] Configured API Base URL: ' + API_BASE);
 
+function resolveAssetUrl(path) {
+  if (!path) return 'https://placehold.co/400x300?text=No+Photo';
+  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  if (path.startsWith('/dataset_images/')) {
+    if (typeof window !== 'undefined' && window.location && window.location.hostname.endsWith('github.io')) {
+      return path.replace('/dataset_images/', './dataset/');
+    }
+    return `${API_BASE}${path}`;
+  }
+  if (path.startsWith('dataset/')) {
+    if (typeof window !== 'undefined' && window.location && window.location.hostname.endsWith('github.io')) {
+      return './' + path;
+    }
+    return `${API_BASE}/${path.replace('dataset/', 'dataset_images/')}`;
+  }
+  return path.startsWith('/') ? `${API_BASE}${path}` : `${API_BASE}/${path}`;
+}
+
 // Global State
 let speciesCache = [];
 let campusZonesCache = [];
@@ -163,7 +181,14 @@ async function checkBackendHealth() {
 async function loadSpeciesCatalogue() {
   const grid = document.getElementById('speciesGrid');
   try {
-    const res = await fetch(`${API_BASE}/api/species`);
+    let res;
+    try {
+      res = await fetch(`${API_BASE}/api/species`);
+      if (!res.ok) throw new Error('Status ' + res.status);
+    } catch (netErr) {
+      console.log('Loading local species fallback...');
+      res = await fetch('./species.json');
+    }
     const data = await res.json();
     speciesCache = data.species || [];
 
@@ -230,7 +255,7 @@ function renderCatalogueView() {
   grid.className = `species-container ${currentViewMode}-view`;
   grid.innerHTML = filtered.map(sp => {
     const catClass = sp.category.toLowerCase();
-    const thumbUrl = sp.thumbnail ? `${API_BASE}${sp.thumbnail}` : 'https://placehold.co/400x300?text=No+Photo';
+    const thumbUrl = resolveAssetUrl(sp.thumbnail);
 
     return `
       <div class="species-card" onclick="openSpeciesModal('${sp.species_id}')">
@@ -668,7 +693,7 @@ window.selectCampusZone = function(zoneId) {
   }
 
   floraList.innerHTML = matchedFlora.map(sp => {
-    const thumbUrl = sp.thumbnail ? `${API_BASE}${sp.thumbnail}` : 'https://placehold.co/100x100?text=Flora';
+    const thumbUrl = resolveAssetUrl(sp.thumbnail);
     return `
       <div class="zone-flora-item" onclick="openSpeciesModal('${sp.species_id}')">
         <img src="${thumbUrl}" alt="${sp.common_name}" class="zone-flora-thumb">
@@ -947,10 +972,10 @@ window.openSpeciesModal = function(speciesId) {
   const badge = document.getElementById('modalPhotoCountBadge');
 
   if (images.length > 0) {
-    mainImg.src = `${API_BASE}${images[0]}`;
+    mainImg.src = resolveAssetUrl(images[0]);
     badge.innerText = `Photo 1 of ${images.length}`;
     thumbsRow.innerHTML = images.map((img, i) => `
-      <img src="${API_BASE}${img}" alt="${sp.common_name}" class="thumb-mini ${i === 0 ? 'active' : ''}" onclick="switchModalPhoto(this, '${API_BASE}${img}', ${i+1}, ${images.length})">
+      <img src="${API_BASE}${img}" alt="${sp.common_name}" class="thumb-mini ${i === 0 ? 'active' : ''}" onclick="switchModalPhoto(this, resolveAssetUrl('${img}'), ${i+1}, ${images.length})">
     `).join('');
   } else {
     mainImg.src = 'https://placehold.co/400x300?text=No+Specimen+Photo';

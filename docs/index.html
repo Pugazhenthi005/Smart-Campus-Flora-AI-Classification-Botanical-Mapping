@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>UCEV Smart Campus Flora | Botanical Inventory & AI Classifier</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#003366">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top App Navigation Bar -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="assets/ucev_logo.webp" alt="UCEV Logo" class="ucev-logo-img" onerror="this.style.display='none'">
+        </div>
+        <div class="brand-text-block">
+          <div class="brand-title-wrap">
+            <h1 class="brand-title">UCEV Smart Flora</h1>
+            <span class="brand-badge">Kakuppam Campus</span>
+          </div>
+          <p class="brand-tagline">University College of Engineering Villupuram &bull; Anna University</p>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <!-- Backend Status Indicator -->
+        <div class="status-indicator" id="backendStatusPill" title="FastAPI Backend Health">
+          <span class="status-dot checking"></span>
+          <span class="status-label">Checking Server...</span>
+        </div>
+
+        <!-- Dark / Light Mode Toggle -->
+        <button class="icon-btn theme-toggle" id="themeToggleBtn" aria-label="Toggle Dark Mode" title="Toggle theme">
+          <svg class="theme-icon-svg" id="themeIconSvg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <span class="theme-icon hidden" id="themeIcon"></span>
+        </button>
+
+        <!-- Quick Export Button -->
+        <button class="btn btn-outline-light btn-sm export-btn" id="exportRegistryBtn" title="Download Botanical Registry">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Export</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="main-nav-bar">
+      <div class="nav-container">
+        <button class="nav-tab active" data-tab="catalogue-tab">
+          <svg class="tab-svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          <span class="tab-text">Catalogue</span>
+          <span class="tab-pill" id="navSpeciesCount">19</span>
+        </button>
+        <button class="nav-tab" data-tab="identify-tab">
+          <svg class="tab-svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+          <span class="tab-text">AI Identifier</span>
+          <span class="tab-tag">AI Model</span>
+        </button>
+        <button class="nav-tab" data-tab="map-tab">
+          <svg class="tab-svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+          <span class="tab-text">Campus Map</span>
+        </button>
+        <button class="nav-tab" data-tab="diagnostics-tab">
+          <svg class="tab-svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31L4.62 19.38A2 2 0 0 0 6.34 22h11.32a2 2 0 0 0 1.72-2.62L14 9.31V2"></path><line x1="8" y1="2" x2="16" y2="2"></line></svg>
+          <span class="tab-text">AI Studio</span>
+        </button>
+        <button class="nav-tab" data-tab="quiz-tab">
+          <svg class="tab-svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          <span class="tab-text">Campus Quest</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Clean Hero Section -->
+  <section class="hero-banner">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span class="pill-dot"></span>
+          <span>UCEV Campus Biodiversity Initiative</span>
+        </div>
+        <h2 class="hero-headline">Explore &amp; Identify Campus Flora</h2>
+        <p class="hero-desc">
+          Documenting 19 indigenous tree and medicinal plant species across the Kakuppam campus of University College of Engineering Villupuram. Powered by MobileNetV2 transfer learning trained directly on our college specimens.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="heroScanBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            <span>Scan Specimen</span>
+          </button>
+          <button class="btn btn-secondary" id="heroMapBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+            <span>Campus Map</span>
+          </button>
+          <button class="btn btn-ghost" id="heroQuizBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            <span>Flora Quiz</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Clean KPI Counters -->
+      <div class="hero-stats-grid">
+        <div class="stat-box">
+          <div class="stat-num" id="kpiSpeciesCount">19</div>
+          <div class="stat-title">Species Catalogued</div>
+          <div class="stat-sub">In college collection</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" id="kpiImageCount">52</div>
+          <div class="stat-title">Specimen Photos</div>
+          <div class="stat-sub">Primary dataset</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">6</div>
+          <div class="stat-title">Campus Zones</div>
+          <div class="stat-sub">Kakuppam grounds</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" id="kpiModelStatus">Active</div>
+          <div class="stat-title">MobileNetV2 AI</div>
+          <div class="stat-sub">Transfer classifier</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Viewports -->
+  <main class="app-main">
+
+    <!-- ========================================== -->
+    <!-- TAB 1: SPECIES CATALOGUE & INVENTORY       -->
+    <!-- ========================================== -->
+    <section id="catalogue-tab" class="view-pane active">
+      <div class="section-toolbar">
+        <div class="toolbar-title-group">
+          <h2>Campus Flora Inventory</h2>
+          <p class="section-sub">Dynamic catalogue loaded from college dataset folders. Click any card to inspect high-res photos, edit records, or generate campus QR tree tags.</p>
+        </div>
+
+        <div class="toolbar-controls">
+          <!-- Search input -->
+          <div class="search-wrap">
+            <svg class="search-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="catalogueSearch" placeholder="Search by name, scientific binomial, or location..." class="search-input">
+            <button class="clear-search-btn hidden" id="clearSearchBtn">&times;</button>
+          </div>
+
+          <!-- View Toggle -->
+          <div class="view-switch-group">
+            <button class="view-btn active" id="viewGridBtn" title="Grid View">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            </button>
+            <button class="view-btn" id="viewListBtn" title="List View">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Chips Row -->
+      <div class="filter-bar">
+        <div class="category-chips" id="categoryChips">
+          <button class="chip active" data-filter="all">All (<span id="chipAllCount">19</span>)</button>
+          <button class="chip" data-filter="Tree">Trees (<span id="chipTreeCount">8</span>)</button>
+          <button class="chip" data-filter="Plant">Plants (<span id="chipPlantCount">11</span>)</button>
+          <button class="chip" data-filter="Weed">Weeds (<span id="chipWeedCount">0</span>)</button>
+        </div>
+
+        <div class="sort-select-wrap">
+          <label for="speciesSortSelect" class="sort-label">Sort:</label>
+          <select id="speciesSortSelect" class="sort-select">
+            <option value="name-asc">Name (A &rarr; Z)</option>
+            <option value="name-desc">Name (Z &rarr; A)</option>
+            <option value="photos-desc">Most Photos First</option>
+            <option value="category">By Category</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Species Cards Grid -->
+      <div class="species-container grid-view" id="speciesGrid">
+        <div class="loading-state">
+          <div class="nature-spinner"></div>
+          <p>Loading botanical specimens from college dataset...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 2: SMART AI PLANT IDENTIFIER          -->
+    <!-- ========================================== -->
+    <section id="identify-tab" class="view-pane">
+      <div class="section-toolbar">
+        <div>
+          <h2>Smart AI Plant Identification</h2>
+          <p class="section-sub">Take a photo or upload an image to identify against our 19 campus species using MobileNetV2.</p>
+        </div>
+      </div>
+
+      <!-- Sample Specimen Quick-Pick Row -->
+      <div class="sample-picker-bar">
+        <div class="picker-label">Quick Test with Campus Specimens:</div>
+        <div class="sample-pills" id="samplePillsList">
+          <!-- Filled dynamically with sample species buttons -->
+        </div>
+      </div>
+
+      <div class="identify-grid">
+        <!-- Left: Upload & Camera Viewfinder -->
+        <div class="card viewfinder-card">
+          <div class="card-head">
+            <h3>Specimen Capture</h3>
+            <span class="badge badge-accent">Camera / File</span>
+          </div>
+
+          <!-- Dropzone & Viewfinder -->
+          <div class="viewfinder-dropzone" id="dropzone">
+            <input type="file" id="imageInput" accept="image/*" capture="environment" class="file-hidden">
+
+            <!-- Empty Prompt State -->
+            <div class="dropzone-body" id="dropzonePrompt">
+              <div class="viewfinder-reticle">
+                <div class="reticle-corner tl"></div>
+                <div class="reticle-corner tr"></div>
+                <div class="reticle-corner bl"></div>
+                <div class="reticle-corner br"></div>
+                <svg class="reticle-camera-svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                <div class="scan-laser"></div>
+              </div>
+              <h4>Capture or Drop Plant Photo</h4>
+              <p class="text-subtle">Use your camera or select an image file (JPEG, PNG, WebP)</p>
+              <div class="drop-btn-row">
+                <button type="button" class="btn btn-primary" id="selectPhotoBtn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                  <span>Select / Take Photo</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Preview Image State -->
+            <div class="viewfinder-preview hidden" id="previewContainer">
+              <img id="imagePreview" alt="Specimen Preview" class="preview-img">
+              <div class="preview-overlay">
+                <button type="button" class="btn btn-sm btn-dark change-photo-btn" id="changePhotoBtn">
+                  <span>Change Photo</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Classification Action Bar -->
+          <div class="viewfinder-action-bar">
+            <button type="button" class="btn btn-success btn-lg full-width" id="classifyBtn" disabled>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+              <span>Run AI Identification</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: AI Classification Results & Transparency -->
+        <div class="card results-card">
+          <div class="card-head">
+            <h3>Identification Result</h3>
+            <span class="badge badge-neutral" id="aiStatusPill">Awaiting Photo</span>
+          </div>
+
+          <div class="results-body">
+            <!-- Empty Placeholder -->
+            <div class="results-empty-state" id="resultPlaceholder">
+              <div class="empty-icon-wrap">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 6a6 6 0 1 0 6 6"></path><path d="M12 10a2 2 0 1 0 2 2"></path></svg>
+              </div>
+              <h4>No Specimen Analyzed Yet</h4>
+              <p class="text-subtle">Upload or capture a photo of leaves, flowers, or bark to run computer-vision transfer learning.</p>
+            </div>
+
+            <!-- Active Result Content (Hidden by default) -->
+            <div class="result-content-wrap hidden" id="resultContent">
+              
+              <!-- Honest Warning / Confidence Alert Banner -->
+              <div class="confidence-alert hidden" id="confidenceAlert">
+                <div class="alert-icon">&excl;</div>
+                <div class="alert-body">
+                  <strong id="alertTitle">Low Confidence Notice</strong>
+                  <p id="alertDesc">Model confidence is below threshold.</p>
+                </div>
+              </div>
+
+              <!-- Top Match Hero Card -->
+              <div class="top-match-card" id="topMatchHero">
+                <div class="match-header">
+                  <span class="match-label">TOP AI PREDICTION</span>
+                  <span class="category-pill" id="resCategoryBadge">Plant</span>
+                </div>
+
+                <div class="match-title-row">
+                  <div>
+                    <h2 class="predicted-common-name" id="resCommonName">-</h2>
+                    <p class="predicted-scientific-name" id="resScientificName">-</p>
+                  </div>
+                  <div class="confidence-ring-wrap">
+                    <div class="confidence-score-val"><span id="resConfidenceVal">0</span>%</div>
+                    <span class="confidence-sub">Confidence</span>
+                  </div>
+                </div>
+
+                <div class="match-details-grid">
+                  <div class="detail-row">
+                    <span class="detail-label">Campus Location:</span>
+                    <span class="detail-value" id="resLocation">-</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Dataset Class:</span>
+                    <span class="detail-value font-code" id="resFolder">-</span>
+                  </div>
+                </div>
+
+                <div class="specimen-desc-box">
+                  <p id="resDescription">-</p>
+                </div>
+              </div>
+
+              <!-- Runner Up Candidates -->
+              <div class="runner-ups-section" id="runnerUpsSection">
+                <h4>Alternative Candidates</h4>
+                <div class="runner-list" id="runnerUpsList">
+                  <!-- Filled dynamically -->
+                </div>
+              </div>
+
+              <!-- Dataset Disclosure Note -->
+              <div class="dataset-honesty-note">
+                <p><strong>Methodology Note:</strong> Trained on college specimens (2-6 images per species). Never claims high precision without field validation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 3: CAMPUS FLORA GIS MAP                -->
+    <!-- ========================================== -->
+    <section id="map-tab" class="view-pane">
+      <div class="section-toolbar">
+        <div>
+          <h2>UCEV Campus Flora Map</h2>
+          <p class="section-sub">Interactive spatial distribution across UCEV Kakuppam campus grounds. Click any pin to discover flora recorded in that zone.</p>
+        </div>
+      </div>
+
+      <div class="map-layout-grid">
+        <!-- Left: Interactive Vector Map -->
+        <div class="card map-canvas-card">
+          <div class="map-wrapper">
+            <svg id="campusSvgMap" viewBox="0 0 1000 650" class="campus-svg">
+              <defs>
+                <pattern id="lawnPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="rgba(0,0,0,0.04)"/>
+                </pattern>
+              </defs>
+
+              <!-- Campus Ground -->
+              <rect width="1000" height="650" fill="var(--map-ground)"/>
+              <rect width="1000" height="650" fill="url(#lawnPattern)"/>
+
+              <!-- Perimeter Roads & Paths -->
+              <path d="M 60,60 L 940,60 L 940,590 L 60,590 Z" fill="none" stroke="var(--map-road)" stroke-width="28" rx="16"/>
+              <line x1="60" y1="325" x2="940" y2="325" stroke="var(--map-road)" stroke-width="22"/>
+              <line x1="500" y1="60" x2="500" y2="590" stroke="var(--map-road)" stroke-width="22"/>
+
+              <!-- Central Plaza -->
+              <circle cx="500" cy="325" r="85" fill="none" stroke="var(--map-road)" stroke-width="20" opacity="0.6"/>
+              <circle cx="500" cy="325" r="60" fill="var(--map-lawn)" stroke="var(--primary)" stroke-width="2"/>
+              <text x="500" y="330" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">UCEV CAMPUS</text>
+
+              <!-- Buildings Outlines -->
+              <g class="campus-building" transform="translate(180, 80)">
+                <rect width="180" height="110" rx="8" fill="var(--map-building)" stroke="var(--border-color)" stroke-width="2"/>
+                <text x="90" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text-main)">S&amp;H BLOCK</text>
+                <text x="90" y="75" text-anchor="middle" font-size="10" fill="var(--text-subtle)">Science &amp; Humanities Dept</text>
+              </g>
+
+              <g class="campus-building" transform="translate(420, 80)">
+                <rect width="160" height="100" rx="8" fill="var(--map-building)" stroke="var(--border-color)" stroke-width="2"/>
+                <text x="80" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text-main)">CENTRAL LIBRARY</text>
+              </g>
+
+              <g class="campus-building" transform="translate(680, 80)">
+                <rect width="200" height="110" rx="8" fill="var(--map-building)" stroke="var(--border-color)" stroke-width="2"/>
+                <text x="100" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text-main)">ADMIN BLOCK</text>
+                <text x="100" y="75" text-anchor="middle" font-size="10" fill="var(--text-subtle)">Dean &amp; Principal Office</text>
+              </g>
+
+              <g class="campus-building" transform="translate(180, 440)">
+                <rect width="200" height="120" rx="8" fill="var(--map-building)" stroke="var(--border-color)" stroke-width="2"/>
+                <text x="100" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text-main)">AUDITORIUM &amp; HALL</text>
+              </g>
+
+              <g class="campus-building" transform="translate(460, 440)">
+                <rect width="200" height="130" rx="8" fill="var(--map-building)" stroke="var(--border-color)" stroke-width="2"/>
+                <text x="100" y="65" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text-main)">HOSTEL QUADS</text>
+                <text x="100" y="85" text-anchor="middle" font-size="10" fill="var(--text-subtle)">Mens &amp; Ladies Hostel</text>
+              </g>
+
+              <g class="campus-building" transform="translate(720, 440)">
+                <rect width="180" height="130" rx="8" fill="var(--map-building)" stroke="var(--border-color)" stroke-width="2"/>
+                <text x="90" y="65" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text-main)">MALLAKHAMB ARENA</text>
+              </g>
+
+              <!-- Interactive Zone Markers (SVG pins rendered dynamically) -->
+              <g id="svgZoneMarkersGroup"></g>
+            </svg>
+          </div>
+
+          <div class="map-legend">
+            <span class="legend-item"><span class="legend-dot zone-a"></span> Zone A: Medicinal &amp; Herbal</span>
+            <span class="legend-item"><span class="legend-dot zone-b"></span> Zone B: Admin Quadrangle</span>
+            <span class="legend-item"><span class="legend-dot zone-c"></span> Zone C: Main Avenue</span>
+            <span class="legend-item"><span class="legend-dot zone-d"></span> Zone D: S&amp;H &amp; Auditorium</span>
+            <span class="legend-item"><span class="legend-dot zone-e"></span> Zone E: Campus Boundary</span>
+            <span class="legend-item"><span class="legend-dot zone-f"></span> Zone F: Orchard &amp; Hostel</span>
+          </div>
+        </div>
+
+        <!-- Right: Selected Zone Details & Flora in this Zone -->
+        <div class="card zone-info-card" id="zoneDetailCard">
+          <div class="zone-badge" id="selectedZoneBadge">ZONE-A</div>
+          <h3 id="selectedZoneName">Medicinal &amp; Herbal Garden</h3>
+          <p class="zone-desc" id="selectedZoneDesc">Dedicated sanctuary for Ayurvedic and therapeutic flora beside the Science Block.</p>
+
+          <h4 class="zone-species-head">Flora Located Here:</h4>
+          <div class="zone-species-list" id="zoneSpeciesList">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 4: DATASET HEALTH & AI STUDIO         -->
+    <!-- ========================================== -->
+    <section id="diagnostics-tab" class="view-pane">
+      <div class="section-toolbar">
+        <div>
+          <h2>Dataset Health &amp; Model Studio</h2>
+          <p class="section-sub">Inspect class balance, training metrics, and manage MobileNetV2 transfer learning weights.</p>
+        </div>
+      </div>
+
+      <!-- Studio KPI Grid -->
+      <div class="diagnostics-kpi-grid">
+        <div class="diag-stat-card">
+          <div class="diag-num" id="kpiTrainSamples">36</div>
+          <div class="diag-label">Train Samples</div>
+          <div class="diag-sub">Augmented runtime</div>
+        </div>
+        <div class="diag-stat-card">
+          <div class="diag-num" id="kpiValSamples">16</div>
+          <div class="diag-label">Validation Samples</div>
+          <div class="diag-sub">Held-out strictly</div>
+        </div>
+        <div class="diag-stat-card">
+          <div class="diag-num" id="kpiTrainAcc">83.3%</div>
+          <div class="diag-label">Train Accuracy</div>
+          <div class="diag-sub">MobileNetV2 head</div>
+        </div>
+        <div class="diag-stat-card">
+          <div class="diag-num" id="kpiValAcc">56.2%</div>
+          <div class="diag-label">Val Accuracy</div>
+          <div class="diag-sub">Unseen specimens</div>
+        </div>
+      </div>
+
+      <!-- Honest Warning Banner -->
+      <div class="dataset-warning-banner">
+        <div class="warning-icon">&excl;</div>
+        <div class="warning-content">
+          <h3>Dataset Audit &amp; Limitations Notice</h3>
+          <p id="studioAuditText">
+            Each species contains only 2 to 6 images in the primary dataset (average: 2.7 images/class).
+            While transfer learning enables rapid feature extraction, this sample size is mathematically small for definitive field classification.
+            Validation accuracy will fluctuate. Do not rely on predictions for safety-critical or medicinal uses without botanical verification.
+          </p>
+        </div>
+      </div>
+
+      <!-- Distribution & Retrain Layout -->
+      <div class="studio-grid">
+        <!-- Left: Class Distribution Chart -->
+        <div class="card chart-card">
+          <div class="card-head">
+            <h3>Class Distribution (Photos per Species)</h3>
+            <span class="badge badge-neutral">19 Classes</span>
+          </div>
+          <div class="chart-container" id="distributionChartBox">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Right: Training Controls Card -->
+        <div class="card retrain-card">
+          <div class="card-head">
+            <h3>Model Management</h3>
+            <span class="badge badge-success" id="studioModelBadge">Trained</span>
+          </div>
+
+          <div class="retrain-body">
+            <p class="text-subtle">Retrain MobileNetV2 with real-time augmentation on your local machine using TensorFlow Keras.</p>
+
+            <div class="form-group">
+              <label for="studioEpochsSelect">Training Epochs:</label>
+              <select id="studioEpochsSelect" class="form-select">
+                <option value="10">10 Epochs (Fast ~15s)</option>
+                <option value="15" selected>15 Epochs (Balanced ~25s)</option>
+                <option value="20">20 Epochs (Deep ~35s)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Base Model Architecture:</label>
+              <input type="text" value="MobileNetV2 (ImageNet weights, Frozen base)" readonly class="form-input readonly-input font-code">
+            </div>
+
+            <button type="button" class="btn btn-primary full-width" id="studioTrainBtn">
+              <span>Retrain Classifier</span>
+            </button>
+
+            <!-- Training Progress Box -->
+            <div class="training-progress-box hidden" id="studioProgressBox">
+              <div class="progress-bar-wrap">
+                <div class="progress-bar-fill" id="studioProgressFill"></div>
+              </div>
+              <p class="progress-msg" id="studioProgressMsg">Initializing transfer learning...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 5: CAMPUS QUEST BOTANICAL QUIZ         -->
+    <!-- ========================================== -->
+    <section id="quiz-tab" class="view-pane">
+      <div class="section-toolbar">
+        <div>
+          <h2>Campus Quest Botanical Quiz</h2>
+          <p class="section-sub">Test your knowledge of UCEV campus flora, medicinal applications, and botanical classifications.</p>
+        </div>
+        <button class="btn btn-outline btn-sm" id="restartQuizBtn">
+          <span>Restart Quiz</span>
+        </button>
+      </div>
+
+      <div class="quiz-container-wrap">
+        <div class="card quiz-main-card" id="quizContainer">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================== -->
+  <!-- SPECIES DETAIL & EDIT MODAL DIALOG         -->
+  <!-- ========================================== -->
+  <div class="modal-backdrop hidden" id="speciesModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="category-pill plant" id="modalCategoryPill">Plant</span>
+          <h2 id="modalTitle" class="modal-plant-name">Plant Factsheet</h2>
+          <p id="modalSub" class="modal-scientific-sub">Scientific Name &bull; Folder</p>
+        </div>
+        <div class="modal-header-actions">
+          <button type="button" class="btn btn-sm btn-outline-light" id="pronounceBtn" title="Listen to Latin Pronunciation">
+            <span>Pronounce</span>
+          </button>
+          <button type="button" class="btn btn-sm btn-outline-light" id="showQrBtn" title="Show Tree QR Tag">
+            <span>QR Tag</span>
+          </button>
+          <button type="button" class="close-modal-btn" id="closeModalBtn" aria-label="Close Modal">&times;</button>
+        </div>
+      </div>
+
+      <div class="modal-content-grid">
+        <!-- Left: Image Gallery & QR View -->
+        <div class="modal-left-col">
+          <!-- Main Selected Specimen Photo -->
+          <div class="specimen-main-view">
+            <img id="modalMainImg" src="" alt="Specimen Photo" class="modal-hero-img">
+            <span class="photo-badge" id="modalPhotoCountBadge">Photo 1 of 3</span>
+          </div>
+
+          <!-- Thumbnails Row -->
+          <div class="specimen-thumbs-row" id="modalThumbsRow"></div>
+
+          <!-- QR Code Popout (Hidden by default) -->
+          <div class="qr-popout-card hidden" id="qrPopoutCard">
+            <h4>Physical Campus Signage Tag</h4>
+            <p class="text-subtle">Scan to open this plant's digital factsheet on campus:</p>
+            <div class="qr-svg-wrap" id="qrSvgWrap"></div>
+            <button type="button" class="btn btn-sm btn-outline" id="printQrBtn">Print Tree Tag</button>
+          </div>
+
+          <!-- Add Photo Form -->
+          <div class="add-photo-box">
+            <h4>Contribute New Specimen Photo</h4>
+            <p class="text-subtle">Directly enriches this species folder in the dataset.</p>
+            <input type="file" id="modalPhotoInput" accept="image/*" class="file-hidden">
+            <button type="button" class="btn btn-sm btn-outline-primary" id="modalAddPhotoBtn">
+              <span>Add Photo to Dataset</span>
+            </button>
+            <span class="upload-feedback" id="modalUploadFeedback"></span>
+          </div>
+        </div>
+
+        <!-- Right: Botanical Form Editor -->
+        <div class="modal-right-col">
+          <form id="speciesEditForm" class="species-edit-form">
+            <input type="hidden" id="editSpeciesId">
+
+            <div class="form-group">
+              <label for="editCommonName">Common Name</label>
+              <input type="text" id="editCommonName" required class="form-input" placeholder="e.g. Aloe Vera">
+            </div>
+
+            <div class="form-group">
+              <label for="editScientificName">Scientific / Botanical Name (Binomial)</label>
+              <input type="text" id="editScientificName" required class="form-input italic" placeholder="e.g. Aloe barbadensis miller">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="editCategory">Category</label>
+                <select id="editCategory" class="form-select">
+                  <option value="Plant">Plant</option>
+                  <option value="Tree">Tree</option>
+                  <option value="Weed">Weed</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="editFolder">Dataset Folder</label>
+                <input type="text" id="editFolder" readonly class="form-input readonly-input font-code">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="editLocation">Campus Location / Habitat</label>
+              <input type="text" id="editLocation" class="form-input" placeholder="e.g. S&H Herbal Bed #2">
+            </div>
+
+            <div class="form-group">
+              <label for="editDescription">Botanical Notes &amp; Characteristics</label>
+              <textarea id="editDescription" rows="4" class="form-textarea" placeholder="Growth habit, flowering characteristics, medicinal properties..."></textarea>
+            </div>
+
+            <div class="modal-actions-bottom">
+              <button type="button" class="btn btn-secondary" id="cancelModalBtn">Cancel</button>
+              <button type="submit" class="btn btn-success" id="saveRecordBtn">
+                <span>Save Botanical Record</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clean Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/ucev_logo.webp" alt="UCEV Crest" class="footer-logo-img" onerror="this.style.display='none'">
+          <div>
+            <h4>University College of Engineering Villupuram</h4>
+            <p>A Constituent College of Anna University, Chennai &bull; Kakuppam, Villupuram &ndash; 605103</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="https://aucev.edu.in" target="_blank" rel="noopener" class="footer-link">Official Website</a>
+          <a href="/api/export" class="footer-link">Download Registry</a>
+          <a href="/docs" target="_blank" class="footer-link">REST API</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 UCEV Smart Campus Flora. Built with FastAPI, TensorFlow MobileNetV2, and Capacitor Android.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js?v=2.2"></script>
+</body>
+</html>
