@@ -1,0 +1,17 @@
+{
+  "appId": "com.smartcampus.flora",
+  "appName": "Smart Campus Flora",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  },
+  "plugins": {
+    "Camera": {
+      "permissions": [
+        "camera",
+        "photos"
+      ]
+    }
+  }
+}

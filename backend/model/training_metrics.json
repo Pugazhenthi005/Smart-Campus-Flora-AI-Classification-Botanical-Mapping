@@ -1,0 +1,38 @@
+{
+  "status": "trained",
+  "num_classes": 19,
+  "classes": [
+    "aloe vera",
+    "alstonia scholaris",
+    "areca palm",
+    "banana tree",
+    "celtis australis",
+    "china doll plant",
+    "coconut tree",
+    "foxtail palm",
+    "hibiscus",
+    "indian almond tree",
+    "indian mast tree",
+    "lxora plant",
+    "madagascar periwinkle",
+    "mango tree(mangifera indica)",
+    "manila tamarind",
+    "neem",
+    "pomegranate plant",
+    "sago palm",
+    "tulasi"
+  ],
+  "train_samples": 36,
+  "val_samples": 16,
+  "epochs_trained": 10,
+  "train_loss": 0.4155,
+  "train_accuracy": 0.8333,
+  "val_loss": 1.9895,
+  "val_accuracy": 0.5625,
+  "dataset_warning": [
+    "DATASET LIMITATION DETECTED: Found 19 species with only 52 total images (average 2.7 images per species, ranging from 1 to 6).",
+    "CRITICAL WARNING: 2\u20136 images per species is severely insufficient for high-confidence real-world plant identification. Standard deep learning vision models require at least 30\u201350+ diverse images per class across varied lighting, angles, and growth stages to prevent severe overfitting.",
+    "SINGLE-IMAGE CLASSES DETECTED: china doll plant, madagascar periwinkle, tulasi contain only 1 photo. These cannot provide an unseen validation sample, making out-of-sample validation impossible."
+  ],
+  "honest_assessment": "Model trained on 36 training images and evaluated on 16 unseen validation images across 19 classes. Final Training Accuracy: 83.3%, Validation Accuracy: 56.2%. IMPORTANT: Because validation set contains only 1 sample per multi-image species (16 total), validation metrics have high variance. Do NOT claim high generalisation accuracy until a larger benchmark (30+ images per class) is gathered."
+}

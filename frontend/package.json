@@ -1,0 +1,29 @@
+{
+  "name": "smart-campus-flora-app",
+  "version": "1.0.0",
+  "description": "Smart Campus Flora mobile and web application with botanical catalogue and plant classifier",
+  "main": "www/index.html",
+  "scripts": {
+    "start": "npx serve www -p 3000",
+    "cap:sync": "cap sync",
+    "cap:open": "cap open android",
+    "cap:build": "cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/camera": "^6.1.2",
+    "@capacitor/core": "^6.2.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.0"
+  },
+  "keywords": [
+    "campus-flora",
+    "botany",
+    "plants",
+    "capacitor",
+    "android"
+  ],
+  "author": "Smart Campus Flora Team",
+  "license": "MIT"
+}

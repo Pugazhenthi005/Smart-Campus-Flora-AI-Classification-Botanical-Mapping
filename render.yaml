@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ucev-smart-campus-flora
+    runtime: docker
+    plan: starter  # Always-on (no sleep). Change to free if sleep is acceptable.
+    region: singapore # Closest to India (Tamil Nadu / Villupuram)
+    branch: main
+    dockerfilePath: Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: TF_ENABLE_ONEDNN_OPTS
+        value: 0
+      - key: TF_CPP_MIN_LOG_LEVEL
+        value: 2

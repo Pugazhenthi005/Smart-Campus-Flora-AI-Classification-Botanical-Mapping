@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Smart Campus Flora</string>
+    <string name="title_activity_main">Smart Campus Flora</string>
+    <string name="package_name">com.smartcampus.flora</string>
+    <string name="custom_url_scheme">com.smartcampus.flora</string>
+</resources>
