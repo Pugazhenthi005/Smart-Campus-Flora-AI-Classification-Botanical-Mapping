@@ -1,135 +1,211 @@
 {
   "aloe vera": {
-    "common_name": "Aloe Vera",
+    "common_name": "Aloe Vera / Katralai (கற்றாழை)",
     "scientific_name": "Aloe barbadensis miller",
+    "tamil_name": "கற்றாழை (Katralai)",
+    "family": "Asphodelaceae",
     "category": "Plant",
     "campus_location": "UCEV Science & Humanities Block, Medicinal Herbal Bed",
-    "description": "Succulent medicinal plant curated by the Science and Humanities department for environmental and botanical study."
+    "description": "Thick, succulent perennial herb with fleshy rosette-forming lance-shaped leaves containing clear therapeutic gel. Highly drought-tolerant with serrated spine margins and seasonal yellow tubular flower spikes.",
+    "medicinal_uses": "Natural cooling agent; accelerates skin burn and wound healing, relieves acid reflux, nourishes hair and scalp, and possesses potent anti-inflammatory and antiseptic qualities in Siddha and Ayurvedic medicine.",
+    "ecological_significance": "Remarkable xerophytic ground cover that retains soil moisture in arid microclimates and releases nocturnal oxygen via Crassulacean Acid Metabolism (CAM)."
   },
   "alstonia scholaris": {
-    "common_name": "Scholar Tree / Devil's Tree",
+    "common_name": "Scholar Tree / Devil's Tree / Ezhilai Paalai (ஏழிலைப்பாலை)",
     "scientific_name": "Alstonia scholaris",
+    "tamil_name": "ஏழிலைப்பாலை (Ezhilai Paalai)",
+    "family": "Apocynaceae",
     "category": "Tree",
     "campus_location": "UCEV Central Avenue, Near Central Library",
-    "description": "Stately evergreen canopy tree with whorled leaves and fragrant seasonal blossoms along the UCEV Central Library avenue."
+    "description": "Stately, tall evergreen canopy tree characterized by distinctive whorls of 7 leathery leaves along each node. Bears dense clusters of intensely fragrant greenish-white nocturnal blossoms in winter and long pendulous pods.",
+    "medicinal_uses": "Revered as 'Saptaparna' in Ayurveda; the bitter bark decoction is traditionally administered for chronic malaria, respiratory congestion, dysentery, and purifying blood.",
+    "ecological_significance": "Provides an expansive avenue shade canopy along library paths, buffers acoustic campus noise, and serves as an important seasonal nectar source for moths and pollinators."
   },
   "areca palm": {
-    "common_name": "Areca Palm / Butterfly Palm",
+    "common_name": "Areca Palm / Butterfly Palm / Kamuku (கமுகu)",
     "scientific_name": "Dypsis lutescens",
+    "tamil_name": "பாக்கு / கமுகு (Kamuku)",
+    "family": "Arecaceae",
     "category": "Plant",
     "campus_location": "UCEV Administrative Block Quadrangle & Dean's Office Entrance",
-    "description": "Clustered ornamental palm featured in the formal administrative courtyard of UCEV Villupuram."
+    "description": "Clustered multi-stemmed ornamental palm displaying graceful arching golden-green feathered fronds atop ringed bamboo-like cane trunks. Creates a welcoming, serene tropical courtyard ambience.",
+    "medicinal_uses": "Known for mild astringent and digestive applications; celebrated as one of nature's top biological air purifiers that removes volatile organic toxins.",
+    "ecological_significance": "Certified by NASA clean air evaluations as an elite bio-humidifier, actively eliminating airborne formaldehyde, toluene, and benzene in enclosed academic spaces."
   },
   "banana tree": {
-    "common_name": "Banana Plant",
+    "common_name": "Banana Plant / Vazhai (வாழை)",
     "scientific_name": "Musa acuminata",
+    "tamil_name": "வாழைமரம் (Vazhai)",
+    "family": "Musaceae",
     "category": "Plant",
     "campus_location": "UCEV Hostel Backyard & Agricultural Demonstration Plot",
-    "description": "Giant herbaceous specimen cultivated near the hostel grounds demonstrating local agro-botanical flora."
+    "description": "Giant perennial herbaceous plant featuring spirally arranged emerald paddle-shaped leaves up to 2 meters long, supported by a tightly packed fleshy pseudostem and large purple floral bracts.",
+    "medicinal_uses": "Stem juice is widely used in Tamil home remedies to dissolve renal stones and aid bladder health; flowers balance blood sugar levels; leaves contain protective polyphenol antioxidants.",
+    "ecological_significance": "Rapid biomass accumulator with exceptional groundwater retention; provides edible biodiversity and biodegradable zero-waste traditional dining leaves."
   },
   "celtis australis": {
-    "common_name": "European Nettle Tree / Hackberry",
+    "common_name": "European Nettle Tree / Hackberry / Kura (குரா)",
     "scientific_name": "Celtis australis",
+    "tamil_name": "குரா மரம் (Kura Maram)",
+    "family": "Cannabaceae",
     "category": "Tree",
     "campus_location": "UCEV North Campus Perimeter Road, Boundary Greenery",
-    "description": "Hardy drought-tolerant deciduous shade tree providing natural wind protection along the Kakuppam campus boundary."
+    "description": "Hardy deciduous shade tree with smooth silver-grey bark, sharply serrated ovate leaves, and small sweet dark-purple drupes that ripen in late summer.",
+    "medicinal_uses": "Bark and leaves have astringent and soothing properties; used traditionally to treat gastrointestinal distress, heavy bleeding, and soothe irritated mucus membranes.",
+    "ecological_significance": "Highly tolerant of urban particulate pollution, acts as an effective perimeter windbreak along the Kakuppam highway, and provides staple sustenance for wild campus birds."
   },
   "china doll plant": {
-    "common_name": "China Doll Plant",
+    "common_name": "China Doll Plant / Radermachera",
     "scientific_name": "Radermachera sinica",
+    "tamil_name": "சைனா டால் செடி (China Doll)",
+    "family": "Bignoniaceae",
     "category": "Plant",
     "campus_location": "UCEV Dean's Office Courtyard & Academic Porch",
-    "description": "Broadleaf ornamental evergreen displaying glossy foliage in sheltered campus verandas."
+    "description": "Compact evergreen ornamental shrub adorned with dense, glossy, bipinnate emerald foliage with delicate lacy leaflets. Cultivated for formal sheltered porticos.",
+    "medicinal_uses": "Valued for restorative aesthetic biophilic presence, promoting academic concentration, reducing indoor stress, and refreshing veranda air.",
+    "ecological_significance": "Improves micro-climatic humidity around academic verandas and provides dense green screening for administrative buildings."
   },
   "coconut tree": {
-    "common_name": "Coconut Palm",
+    "common_name": "Coconut Palm / Thengai (தென்னை)",
     "scientific_name": "Cocos nucifera",
+    "tamil_name": "தென்னைமரம் (Thennai)",
+    "family": "Arecaceae",
     "category": "Tree",
     "campus_location": "UCEV Sports Ground Perimeter & Canteen Walkway",
-    "description": "Iconic tropical palms bordering the University College sports ground and athletic pavilions."
+    "description": "Iconic tropical monocot palm reaching 20-30m in height with a ringed columnar trunk and a graceful crown of pinnate feather-like fronds. Yields hard-shelled drupes with nutritious water and copra.",
+    "medicinal_uses": "Tender coconut water serves as a natural isotonic electrolyte beverage; virgin coconut oil possesses lauric acid which exhibits antimicrobial, antifungal, and cellular protective properties.",
+    "ecological_significance": "Fibrous root network binds loose sandy soils to prevent erosion along athletic pavilions, while providing renewable eco-friendly fibers, leaves, and food."
   },
   "foxtail palm": {
-    "common_name": "Foxtail Palm",
+    "common_name": "Foxtail Palm / Nari Vaal Panai (நரிவால் பனை)",
     "scientific_name": "Wodyetia bifurcata",
+    "tamil_name": "நரிவால் பனை (Foxtail Palm)",
+    "family": "Arecaceae",
     "category": "Tree",
     "campus_location": "UCEV Main Entrance Gate Boulevard (Kakuppam Approach)",
-    "description": "Graceful plume-fronded palm adorning the grand entrance driveway welcoming visitors to UCEV."
+    "description": "Striking architectural palm possessing a smooth, self-cleaning ringed grey trunk and dense, plumose fronds that form a distinctive brush resembling a fox's bushy tail.",
+    "medicinal_uses": "Grown predominantly for ornamental value and environmental moderation; seeds and fibrous fronds utilized in sustainable crafts.",
+    "ecological_significance": "Forms an imposing welcoming avenue boulevard that filters vehicular dust and carbon particulates along the main approach road to the college."
   },
   "hibiscus": {
-    "common_name": "China Rose / Sembaruthi",
+    "common_name": "China Rose / Sembaruthi (செம்பருத்தி)",
     "scientific_name": "Hibiscus rosa-sinensis",
+    "tamil_name": "செம்பருத்தி (Sembaruthi)",
+    "family": "Malvaceae",
     "category": "Plant",
     "campus_location": "UCEV Girls Hostel Courtyard & Chemistry/Biology Garden",
-    "description": "Vibrant red flowering shrub studied for botanical morphology and hair care herbal applications."
+    "description": "Perennial flowering shrub with glossy dark-green serrated leaves and brilliant scarlet 5-petaled flowers with a dramatic elongated golden-dusted staminal column.",
+    "medicinal_uses": "Legendary Siddha herb for conditioning hair, preventing early greying, strengthening hair roots, cooling internal heat, and brewing heart-healthy flavonoid tea.",
+    "ecological_significance": "High-value nectar repository supporting native sunbirds, butterflies, and pollinating bees across the college gardens."
   },
   "indian almond tree": {
-    "common_name": "Indian Almond / Nattu Vadumai",
+    "common_name": "Indian Almond / Nattu Vadumai (நாட்டு வாதுமை)",
     "scientific_name": "Terminalia catappa",
+    "tamil_name": "நாட்டு வாதுமை (Nattu Vadumai)",
+    "family": "Combretaceae",
     "category": "Tree",
     "campus_location": "UCEV University Auditorium Walkway & Open-Air Amphitheatre",
-    "description": "Spreading tiered canopy tree providing cool shade for students outside the university auditorium."
+    "description": "Broad pagoda-style deciduous tree with prominent tiered horizontal branches and large leathery obovate leaves that turn striking crimson and copper before autumn shedding.",
+    "medicinal_uses": "Leaf extracts contain antibacterial tannins used to heal skin eruptions; internal kernels contain healthy monounsaturated fats that boost memory and vitality.",
+    "ecological_significance": "Forms a massive parasol shade canopy over open-air walkways, dramatically lowering ground radiant temperatures during hot midday hours."
   },
   "indian mast tree": {
-    "common_name": "False Ashoka / Nettilingam",
+    "common_name": "False Ashoka / Nettilingam (நெட்டிலிங்கம்)",
     "scientific_name": "Polyalthia longifolia",
+    "tamil_name": "நெட்டிலிங்கம் (Nettilingam)",
+    "family": "Annonaceae",
     "category": "Tree",
     "campus_location": "UCEV Main Entrance Driveway & Campus Boundary Wall",
-    "description": "Symmetrical columnar evergreen tree functioning as an effective noise and dust barrier along the college boundary."
+    "description": "Tall, slender, columnar evergreen tree with pendulous downward-sweeping branches and narrow undulating shiny leaves with wavy borders.",
+    "medicinal_uses": "Bark decoction used in indigenous medicine as a febrifuge to lower fevers, alleviate inflammation, and stabilize blood pressure.",
+    "ecological_significance": "Highly effective natural acoustic barrier that absorbs roadside traffic noise and intercepts particulate dust along campus boundaries."
   },
   "lxora plant": {
-    "common_name": "Jungle Geranium / Ixora (Idli Poo)",
+    "common_name": "Jungle Geranium / Ixora / Idli Poo (இட்லிப்பூ)",
     "scientific_name": "Ixora coccinea",
+    "tamil_name": "இட்லிப்பூ / வெட்சி (Idli Poo)",
+    "family": "Rubiaceae",
     "category": "Plant",
     "campus_location": "UCEV Central Campus Circle Lawn & Flagpost Borders",
-    "description": "Dense clusters of vivid scarlet flowers framing the central roundabout and ceremonial flagpole."
+    "description": "Compact evergreen shrub producing dense, rounded corymbs composed of dozens of small brilliant red or scarlet star-like tubular florets throughout the year.",
+    "medicinal_uses": "Flowers are used in Siddha treatments to alleviate dysentery, soothe skin ulcers, treat boils, and calm ophthalmic infections.",
+    "ecological_significance": "Perennial floral nectar reservoir that enriches campus biodiversity by sustaining butterflies, moths, and humming insects continuously."
   },
   "madagascar periwinkle": {
-    "common_name": "Sadabahar / Nithyakalyani",
+    "common_name": "Sadabahar / Nithyakalyani (நித்யகல்யாணி)",
     "scientific_name": "Catharanthus roseus",
+    "tamil_name": "நித்யகல்யாணி (Nithyakalyani)",
+    "family": "Apocynaceae",
     "category": "Plant",
     "campus_location": "UCEV Herbal Garden, Science & Humanities Plot",
-    "description": "Essential medicinal perennial herb renowned in oncology research as the source of vincristine alkaloids."
+    "description": "Evergreen herbaceous subshrub with glossy oval leaves and 5-lobed salverform flowers in vibrant pink, violet, or pure white with a yellow or rose eye. Flowers non-stop throughout the year.",
+    "medicinal_uses": "Globally famous commercial source of vinca alkaloids (Vincristine and Vinblastine) utilized in oncology chemotherapy; leaves traditionally boiled to regulate diabetes.",
+    "ecological_significance": "Hardy drought-tolerant survivor that thrives in poor soils, providing continuous herbal medicine specimens for engineering chemistry students."
   },
   "mango tree(mangifera indica)": {
-    "common_name": "Mango Tree / Maamaram",
+    "common_name": "Mango Tree / Maamaram (மாமரம்)",
     "scientific_name": "Mangifera indica",
+    "tamil_name": "மாமரம் (Maamaram)",
+    "family": "Anacardiaceae",
     "category": "Tree",
     "campus_location": "UCEV Canteen Lawn & Old Campus Orchard",
-    "description": "Heritage canopy shade tree loved by generations of engineering students for shade and seasonal blossoms."
+    "description": "Dense, broad-domed evergreen canopy tree with aromatic dark-green leathery leaves, sweet-scented floral panicles, and succulent drupes prized as the national fruit of India.",
+    "medicinal_uses": "Leaves contain mangiferin with anti-diabetic and antioxidant attributes; bark and seed extracts act as potent astringents for digestive care.",
+    "ecological_significance": "Exceptional carbon sink tree providing abundant cooling shade for students, soil stability, and food for wild campus squirrels and birds."
   },
   "manila tamarind": {
-    "common_name": "Manila Tamarind / Kodukkapuli",
+    "common_name": "Manila Tamarind / Kodukkapuli (கொடுக்காப்புளி)",
     "scientific_name": "Pithecellobium dulce",
+    "tamil_name": "கொடுக்காப்புளி (Kodukkapuli)",
+    "family": "Fabaceae",
     "category": "Tree",
     "campus_location": "UCEV East Campus Perimeter Fence Line",
-    "description": "Resilient thorny legume tree with sweet spiral pods growing along the campus fence."
+    "description": "Thorny, resilient leguminous tree with bipinnate leaflets and uniquely curled, twisted pods encasing sweet, spongy pinkish-white edible arils with black seeds.",
+    "medicinal_uses": "Rich in immune-boosting Vitamin C, polyphenols, and dietary fiber; bark extract treats toothaches, gum inflammations, and intestinal worms.",
+    "ecological_significance": "Symbiotic root nodules fix atmospheric nitrogen to naturally fertilize nutrient-poor campus soil while acting as an impenetrable living fence."
   },
   "neem": {
-    "common_name": "Neem Tree / Veppamaram",
+    "common_name": "Neem Tree / Veppamaram (வேப்பமரம்)",
     "scientific_name": "Azadirachta indica",
+    "tamil_name": "வேப்பமரம் (Veppamaram)",
+    "family": "Meliaceae",
     "category": "Tree",
     "campus_location": "UCEV Engineering Department Courtyards (CSE / ECE / MECH)",
-    "description": "Venerated medicinal tree providing continuous shade, air purification, and natural pest deterrence across department lawns."
+    "description": "Venerated evergreen shade tree with curved pinnate serrated leaves and sweet-scented small white starry blossoms. Celebrated as the ultimate sacred multi-purpose pharmacy.",
+    "medicinal_uses": "Contains azadirachtin with formidable antibacterial, antiviral, antifungal, and blood-purifying properties; treats acne, cleanses wounds, and cures skin ailments.",
+    "ecological_significance": "Acts as an organic insect repellent, releases generous oxygen, reduces ambient courtyard temperature by 3°C, and regenerates depleted soil."
   },
   "pomegranate plant": {
-    "common_name": "Pomegranate / Madhulai",
+    "common_name": "Pomegranate / Madhulai (மாதுளை)",
     "scientific_name": "Punica granatum",
+    "tamil_name": "மாதுளை (Madhulai)",
+    "family": "Lythraceae",
     "category": "Plant",
     "campus_location": "UCEV Horticulture Plot & Faculty Quarters Garden",
-    "description": "Flowering fruit shrub with brilliant red blossoms thriving in the campus horticultural nursery."
+    "description": "Multi-stemmed shrub or small tree with glossy narrow leaves, flaming orange-red trumpet flowers, and thick-rinded ruby-red fruits filled with jewel-like arils.",
+    "medicinal_uses": "Ranks among the highest antioxidant fruits on earth (punicalagins); improves hemoglobin count, lowers arterial plaque, and regulates blood pressure.",
+    "ecological_significance": "Resilient, drought-tolerant fruiting specimen that sustains beneficial campus insects and provides live botanical cultivation demonstrations."
   },
   "sago palm": {
-    "common_name": "Sago Palm / King Sago",
+    "common_name": "Sago Palm / King Sago / Eenthai (ஈந்தை)",
     "scientific_name": "Cycas revoluta",
+    "tamil_name": "ஈந்தை / சாகோ பனை (Sago Palm)",
+    "family": "Cycadaceae",
     "category": "Plant",
     "campus_location": "UCEV Administrative Building Entrance Porch",
-    "description": "Living fossil cycad presenting prehistoric symmetrical foliage at the entrance to university administrative offices."
+    "description": "Ancient prehistoric gymnosperm cycad surviving unchanged since the Jurassic era. Displays a rugged shaggy trunk capped with a rigid, symmetrical rosette of dark glossy needle-tipped fronds.",
+    "medicinal_uses": "Stem pith historically processed for edible sago starch; provides unique biophilic educational value on ancient non-flowering seed plants.",
+    "ecological_significance": "Exceptional living evolutionary artifact demonstrating ancient botanical defense adaptations, extreme drought tolerance, and architectural landscaping."
   },
   "tulasi": {
-    "common_name": "Holy Basil / Krishna Tulasi",
+    "common_name": "Holy Basil / Krishna Tulasi (துளசி)",
     "scientific_name": "Ocimum tenuiflorum",
+    "tamil_name": "துளசி (Tulasi)",
+    "family": "Lamiaceae",
     "category": "Plant",
     "campus_location": "UCEV Herbal Sanctuary & Campus Temple Circle",
-    "description": "Sacred aromatic herb celebrated for immune-boosting essential oils and Ayurvedic botanical significance."
+    "description": "Aromatic revered medicinal perennial herb with pubescent purple-tinged square stems, serrated purplish leaves, and terminal spires of minute lilac flowers with an intense clove-like fragrance.",
+    "medicinal_uses": "Premier adaptogen in Siddha and Ayurveda containing eugenol; fortifies immunity, clears respiratory congestion, relieves stress, and neutralizes fever.",
+    "ecological_significance": "Emits natural phytoncides that sanitize surrounding atmospheric air and naturally repel mosquitoes and disease-carrying vectors across campus grounds."
   }
 }

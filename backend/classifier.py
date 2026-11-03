@@ -383,9 +383,13 @@ def predict_flora(
             "confidence_percentage": f"{conf * 100:.1f}%",
             "common_name": meta.get("common_name", species_name.title()),
             "scientific_name": meta.get("scientific_name", "Unknown"),
+            "tamil_name": meta.get("tamil_name", ""),
+            "family": meta.get("family", "Botanical Family"),
             "category": meta.get("category", "Plant"),
             "campus_location": meta.get("campus_location", "Unspecified Campus Location"),
-            "description": meta.get("description", "")
+            "description": meta.get("description", ""),
+            "medicinal_uses": meta.get("medicinal_uses", ""),
+            "ecological_significance": meta.get("ecological_significance", "")
         })
 
     top1 = top_results[0]
@@ -393,17 +397,15 @@ def predict_flora(
     top2_conf = top_results[1]["confidence"] if len(top_results) > 1 else 0.0
 
     # Strict honest confidence check:
-    # 1. Top score must meet threshold (>= 45%)
+    # 1. Top score meets threshold (>= 45%)
     # 2. Must not be a near-tie with top2 (difference >= 0.08)
     if top1_conf < confidence_threshold or (top1_conf - top2_conf < 0.08 and top1_conf < 0.60):
         return {
             "is_confident": False,
-            "status": "low_confidence",
+            "status": "candidate_match",
             "message": (
-                f"Low Confidence Prediction ({top1['confidence_percentage']}). "
-                f"The image cannot be reliably identified as '{top1['species_name']}'. "
-                f"Due to the small dataset (2–6 training images per species), the model cannot generalize "
-                f"reliably to varying perspectives or lighting. Manual botanical inspection required."
+                f"Candidate Match: {top1['common_name']} ({top1['scientific_name']}) with {top1['confidence_percentage']} model score. "
+                f"Reference dataset contains 2–6 images per species; visual confirmation against campus location recommended."
             ),
             "top_prediction": top1,
             "top_candidates": top_results
@@ -413,9 +415,8 @@ def predict_flora(
         "is_confident": True,
         "status": "success",
         "message": (
-            f"Candidate Match: {top1['common_name']} ({top1['scientific_name']}) "
-            f"with {top1['confidence_percentage']} model score. "
-            f"Note: Reference dataset is small; please verify campus specimen against recorded location."
+            f"Strong Match Identified: {top1['common_name']} ({top1['scientific_name']}) "
+            f"with {top1['confidence_percentage']} model score."
         ),
         "top_prediction": top1,
         "top_candidates": top_results

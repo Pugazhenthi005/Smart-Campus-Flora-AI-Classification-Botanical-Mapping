@@ -309,6 +309,7 @@
                   <div>
                     <h2 class="predicted-common-name" id="resCommonName">-</h2>
                     <p class="predicted-scientific-name" id="resScientificName">-</p>
+                    <p class="predicted-tamil-name" id="resTamilName" style="color: var(--accent); font-weight: 600; font-size: 1rem; margin-top: 2px;"></p>
                   </div>
                   <div class="confidence-ring-wrap">
                     <div class="confidence-score-val"><span id="resConfidenceVal">0</span>%</div>
@@ -322,13 +323,36 @@
                     <span class="detail-value" id="resLocation">-</span>
                   </div>
                   <div class="detail-row">
-                    <span class="detail-label">Dataset Class:</span>
-                    <span class="detail-value font-code" id="resFolder">-</span>
+                    <span class="detail-label">Botanical Family:</span>
+                    <span class="detail-value" id="resFamily">-</span>
                   </div>
                 </div>
 
-                <div class="specimen-desc-box">
-                  <p id="resDescription">-</p>
+                <!-- Comprehensive Botanical & Medicinal Specimen Information -->
+                <div class="specimen-desc-card">
+                  <div class="desc-section-block">
+                    <h4 class="desc-heading">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>
+                      Botanical Description
+                    </h4>
+                    <p class="desc-text" id="resDescription">-</p>
+                  </div>
+
+                  <div class="desc-section-block medicinal-block" id="resMedicinalBlock">
+                    <h4 class="desc-heading medicinal-heading">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                      Medicinal & Traditional Uses (Siddha / Ayurveda)
+                    </h4>
+                    <p class="desc-text" id="resMedicinalUses">-</p>
+                  </div>
+
+                  <div class="desc-section-block ecological-block" id="resEcologicalBlock">
+                    <h4 class="desc-heading ecological-heading">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                      Campus Ecological Significance
+                    </h4>
+                    <p class="desc-text" id="resEcologicalSignificance">-</p>
+                  </div>
                 </div>
               </div>
 

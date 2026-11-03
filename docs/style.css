@@ -1986,3 +1986,59 @@ h1, h2, h3, h4 {
   font-size: 0.8rem;
   color: var(--text-light);
 }
+
+/* ==========================================================================
+   Comprehensive Botanical & Medicinal Specimen Cards
+   ========================================================================== */
+.specimen-desc-card {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.desc-section-block {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  transition: all 0.2s ease;
+}
+
+.desc-section-block.medicinal-block {
+  border-left-color: #10b981;
+  background: rgba(16, 185, 129, 0.04);
+}
+
+.desc-section-block.ecological-block {
+  border-left-color: #0284c7;
+  background: rgba(2, 132, 199, 0.04);
+}
+
+.desc-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.desc-heading.medicinal-heading {
+  color: #059669;
+}
+
+.desc-heading.ecological-heading {
+  color: #0284c7;
+}
+
+.desc-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin: 0;
+}
